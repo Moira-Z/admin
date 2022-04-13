@@ -110,7 +110,7 @@ export default class Admin extends React.Component {
         message.success("change password successfully");
         this.setState({changePw: false});
         console.log(this.state.list[this.state.cur_item][this.state.id]);
-        fetch("http://localhost:8080/changePassword", {
+        fetch("/changePassword", {
             method: 'post',
             header: {'Content-Type': 'application/json'},
             body: JSON.stringify({
