@@ -54,7 +54,7 @@ export default class Admin extends React.Component {
 
     // get users info
     componentDidMount() {
-        fetch(URL)
+        fetch("/adminpage")
             .then(res=>res.json())
             .then(
                 (result)=>{
