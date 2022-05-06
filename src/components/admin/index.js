@@ -25,27 +25,27 @@ export default class Admin extends React.Component {
             id: "id",
             list: [
                 {
-                    name: "Moira",
-                    id: "123456",
-                    avatar: "https://joeschmoe.io/api/v1/random",
-                    password: "123456",
-                    email: "1155141582@link.cuhk.edu.hk",
-                },
-                {
-                    name: "ZHAO",
-                    id: "111111",
-                    avatar: "https://joeschmoe.io/api/v1/random",
-                    email: "1111@gmail.com",
+                    name: "",
+                    id: "",
+                    avatar: "",
+                    password: "",
+                    email: "",
                 },
                 {
                     name: "",
                     id: "",
-                    avatar: "https://joeschmoe.io/api/v1/random",
+                    avatar: "",
+                    email: "",
                 },
                 {
                     name: "",
                     id: "",
-                    avatar: "https://joeschmoe.io/api/v1/random",
+                    avatar: "",
+                },
+                {
+                    name: "",
+                    id: "",
+                    avatar: "",
                 },
             ],
         }
@@ -67,6 +67,7 @@ export default class Admin extends React.Component {
 
     }
 
+    // display user information
     showDrawer = (id) => {
         this.setState({
             visible: true,
@@ -74,12 +75,14 @@ export default class Admin extends React.Component {
         });
     };
 
+    // close drawer callback
     onClose = () => {
         this.setState({
             visible: false,
         });
     };
 
+    // change password
     onPwClick = () => {
         this.setState({changePw: true});
     }
@@ -114,8 +117,8 @@ export default class Admin extends React.Component {
             method: 'post',
             header: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                "id": this.state.list[this.state.cur_item][this.state.id],
-                "password": e.target.value,
+                id: this.state.list[this.state.cur_item][this.state.id],
+                password: e.target.value,
             })
         });
     }
